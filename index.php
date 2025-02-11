@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +7,7 @@
     <title>Projeto PWII B</title>
 </head>
 <body>
+a href= "index.php"> Pagina de contato</a>
    <?php 
     echo"<h1> 3Titulo do projecto PWII B</>";
     ?>
