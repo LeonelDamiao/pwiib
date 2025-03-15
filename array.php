@@ -133,17 +133,13 @@ identificados por indice ou chave.
 
 <h1> Sorteio</h1>
 <?php
- $Sorteio = array(12,7,3,9,5,2,41,11,8,13,6,14,15,10);
+ $Sorteio = array(12,7,3,9,5,2,41,11,8,13,6,14,15,10,19);
  
  for ($i=0 ; $i < 15 ; $i++ )
  {
    echo "<h2>Rodada ".($i+1)."número sorteado é : $Sorteio[$i]</h2>";
  }
-?> 
-
-
-
-
+?>
 <script src="bootstrap.bundle.min.js"></script>
 </body>
 </html>
