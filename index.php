@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto PWII B</title>
     <link href="bootstrap.min.css" rel="stylesheet" />
-    
+    <link href="estilo.css" rel="stylesheet" />
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-        Projeto PWII B
-    </a>
+      
+     <img src="/pwiib/imagens/bootstrap-logo.svg" alt="Bootstrap" width="30" height="24" />
+      Projeto PW 2 Turma B
+  </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -22,28 +24,25 @@
        
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            PHP
+            php
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Variáveis</a></li>
-            <li><a class="dropdown-item" href="#">IF</a></li>
-            <li><a class="dropdown-item" href="#">While</a></li>
-            <li><a class="dropdown-item" href="#">For</a></li>
-            <li><a class="dropdown-item" href="#">Switch</a></li>
-            <li><a class="dropdown-item" href="#">Array vetor</a></li>
-            
+            <li><a class="dropdown-item" href="variavel.php">Variável</a></li>
+            <li><a class="dropdown-item" href="if.php">If</a></li>
+            <li><a class="dropdown-item" href="while.php">While</a></li>
+            <li><a class="dropdown-item" href="for.php">For</a></li>
+            <li><a class="dropdown-item" href="switch.php">Switch</a></li>
+            <li><a class="dropdown-item" href="array.php">Array/Vetor</a></li>
           </ul>
         </li>
        
       </ul>
-      
+     
     </div>
   </div>
 </nav>
 
 
-
-
-    <script src="bootstrap.bundle.min.js"></script>
+<script src="bootstrap.bundle.min.js"></script>
 </body>
 </html>
