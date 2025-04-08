@@ -11,13 +11,14 @@
 <body>
    
 
-<div class="container">
+<div class="container ">
+
   <div class="row">
     <div class="col-md-6 offset-md-3">
         <br>
         <br>
-<img src="defesa-civil-brasil.png" alt="Flowers in Chania" width="460" height="345">
-<form action="verificar_login.php" method="post">
+<img src="defesa-civil-brasil.png" alt="Flowers in Chania" width="640" height="300">
+<form action="verificar_login.php" method="post" class=" bg-primary " >
     <br>
 <input type="text" class="form-control" id="inpuText" placeholder="Digite o seu Login"  />
 <br>
