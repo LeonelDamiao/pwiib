@@ -1,8 +1,8 @@
 <?php
-class Usuario.Repository{
-    private $ $conexao;
+class UsuarioRepository {
+    private $conexao;
 
-    public function_construvt(mysql $conexao)
+    public function__construct(mysqli $conexao)
     {
         $this->conexao=$conexao;
     }
@@ -29,11 +29,5 @@ class Usuario.Repository{
         }
     
 }
-
-
-
-
-
-
 
 ?>
