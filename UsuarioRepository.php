@@ -2,32 +2,29 @@
 class UsuarioRepository {
     private $conexao;
 
-    public function__construct(mysqli $conexao)
+    public function __construct(mysqli $conexao)
     {
-        $this->conexao=$conexao;
+        $this->conexao = $conexao;
     }
 
-    public function buscarTodos()
-    {
-        $result=$this-> conexao-> query("SELECT*FROM usuarios");
-        $usuarios=[];
-        while($row=$result->fetch_assoc());
-        {
-            array_push($usuarios);
+    public function buscarTodos() {
+        $result = $this->conexao->query(
+            "SELECT * FROM usuarios");
+
+        $usuarios = [];
+        while ($row = $result->fetch_assoc()) {
+            array_push($usuarios, $row);
         }
         return $usuarios;
     }
 
-        public function buscarPorId($id)
-        {
-            $stmt=$this->conexao->prepare("SELECT*FROM usuarios WHERE id=?");
-            $stmt->bind_param("i",$id);
-            $stmt->execute();
+    public function buscarPorId($id) {
+        $stmt = $this->conexao->prepare(
+            "SELECT * FROM usuarios WHERE id = ?");
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
 
-            $resultado= $stmt->get_result();
-            retun $resultado->fectch_assoc();
-        }
-    
+        $resultado = $stmt->get_result();
+        return $resultado->fetch_assoc();
+    }
 }
-
-?>

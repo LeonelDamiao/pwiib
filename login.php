@@ -1,33 +1,33 @@
-<?php include "cabecalho.php";?>
-   
+<?php include "cabecalho.php"; ?>
 
-<div class="container ">
+<div class="container">
 
-  <div class="row">
-    <div class="col-md-6 offset-md-3"><br><br>
-        <br>
-<img src="img/defesa-civil-brasil.png" alt="Flowers in Chania" width="636" height="250">
-<form action="verificar_login.php" method="post" class=" bg-primary " >
-    <br><br>
-<input type="text" class="form-control" id="inpuText" placeholder="Digite o seu Login"  />
-<br>
-<input type="password" class="form-control" id="inputPassword2" placeholder=" Digite a sua Senha" />
-<?php
-if (isset($_GET["erro"]) && empty($_GET["error"])){
-    echo $_GET['erro'];
-}
-?>
-<br />
-<button type="submit">
-    Logar
-</button>
-</form>
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+
+        <div class="card mt-3 ">
+
+            <form class="card-body cardbody-color rounded-3 p-lg-5" method="post" action="/Login/Entrar/">
+
+                <div class="text-center">
+                    <img src="/pwiib/imagens/login.png" class="img-fluid my-4 bg-white p-3 rounded-3" alt="profile">
+                </div>
+                <div class="mb-3 mt-3">
+                    <input type="text" class="form-control" name="Login" id="Login" required aria-describedby="Login" placeholder="Digite seu login">
+                </div>
+                <div class="mb-3 mt-3">
+                    <input type="password" class="form-control" id="Senha" name="Senha" required placeholder="Digite sua senha">
+                </div>
+                <div class="text-center"><button type="submit" class="btn btn-color px-5 mb-5 w-100" style="background-color:#F7A81B">Entrar</button></div>
+                <input type="hidden" name="ReturnUrl" value="/" />
+                <div id="mensagem" class="form-text text-center mb-5 text-dark">
+                    
+                </div>
+            </form>
+        </div>
+
     </div>
-  </div>
+</div>
 </div>
 
-
-
-<script src="bootstrap.bundle.min.js"></script>
-</body>
-</html>
+<?php include "rodape.php"; ?>
