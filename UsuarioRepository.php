@@ -27,4 +27,15 @@ class UsuarioRepository {
         $resultado = $stmt->get_result();
         return $resultado->fetch_assoc();
     }
+
+    public function Insert($login, $senha, $ativo)
+    {
+        $sql= " INSERT INTO usuarios(LOGIN, SENHA, ATIVO) VALUE(?, ?, ?)";
+        $stmt= $this->conexao->prepare($sql);
+        $stmt->bind_param("ssi", $login,$senha,$ativo);
+        $stmt->execute();
+    }
 }
+
+
+?>

@@ -13,7 +13,7 @@
 
                  <label >senha</label>
                  <input name="name type="passeword" class="form-control />
-                 <input type="checkbox" name="ativo" value="Usuário Ativo" />
+                 <input type="checkbox" name="ativo" value="1" />
                  <br/>     <br/>
                  <button name="salvar_usuário" type="submit" class="btn btn-primary">
 
