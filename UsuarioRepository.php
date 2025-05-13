@@ -18,6 +18,17 @@ class UsuarioRepository {
         return $usuarios;
     }
 
+    public function Pesquisar($busca)
+    {
+        $sql = "SELECT * FROM usuarios WHERE LOGIN like '%$busca%' ";
+        $resultado = $this->conexao->query($sql);
+        $usuarios = [];
+        while ($row = $resultado->fetch_assoc()) {
+            array_push($usuarios, $row);
+        }
+        return $usuarios;
+    }
+   
     public function buscarPorId($id) {
         $stmt = $this->conexao->prepare(
             "SELECT * FROM usuarios WHERE id = ?");
@@ -27,15 +38,33 @@ class UsuarioRepository {
         $resultado = $stmt->get_result();
         return $resultado->fetch_assoc();
     }
-
-    public function Insert($login, $senha, $ativo)
+    public function Inserir($login, $senha, $ativo)
     {
-        $sql= " INSERT INTO usuarios(LOGIN, SENHA, ATIVO) VALUE(?, ?, ?)";
-        $stmt= $this->conexao->prepare($sql);
-        $stmt->bind_param("ssi", $login,$senha,$ativo);
-        $stmt->execute();
+        echo $ativo;
+        
+        $sql = "INSERT INTO usuarios (LOGIN, SENHA, ATIVO) 
+                VALUES (?, ?, ?);";
+                $stmt = $this->conexao->prepare($sql);
+                $stmt->bind_param("ssi", $login,$senha,$ativo);
+                $stmt->execute();
     }
+
+    public function Editar($login, $id, $ativo)
+    {
+        $sql = "UPDATE usuarios set LOGIN = ?, ATIVO = ? where ID = ?";
+                $stmt = $this->conexao->prepare($sql);
+                $stmt->bind_param("sii", $login,$ativo,$id);
+                $stmt->execute();
+    }
+
+
+
+    public function excluirUsuario($id)
+    {
+        $sql = "DELETE FROM usuarios where id = ?";
+        $preparar = $this->conexao->prepare($sql);
+        $preparar->bind_param("i",$id);
+        $preparar->execute();
+    }
+
 }
-
-
-?>
