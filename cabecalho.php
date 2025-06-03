@@ -75,6 +75,15 @@
               Usuarios
             </a>
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="disciplina.php" > 
+              disciplina
+            </a>
+        </li>
+
+
+
       </ul><!--Fim do menu  -->
 <?php
       if (basename($_SERVER['PHP_SELF']) != 'login.php') {

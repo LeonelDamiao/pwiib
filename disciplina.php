@@ -6,7 +6,7 @@
 
     //Crio um objeto do tipo UsuarioRepository chamado repo
     //E recebe a conexão como parametro
-    $repo = new UsuarioRepository($conexao);
+    $repo = new disciplinaRepository($conexao);
 
     if( isset($_GET['busca']) && !empty($_GET['busca']) )
     {
@@ -59,13 +59,13 @@
                     </thead>
                     <tbody>
                         <?php
-                            //foreach serve para ler todos os usuarios 
+                            //foreach serve para ler todas as disciplinas
                             // vindos do banco em formato de array chave valor
                             foreach ($disciplina as $user) {
                                 echo "<tr>
                                         <td>".$user['ID']."</td>
-                                        <td>".$user['LOGIN']."</td>
-                                        <td>".$user['ATIVO']."</td>
+                                        <td>".$user['DISCIPLINA']."</td>
+                                      
                                         <td>
                                             <a class='btn btn-danger'
                                                  href='excluir_disciplina.php?id=".$user['ID']."'>Excluir</a>

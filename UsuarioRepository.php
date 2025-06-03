@@ -41,7 +41,7 @@ class UsuarioRepository {
 
     public function verificarLogin($login, $senha) {
         $stmt = $this->conexao->prepare(
-            "SELECT * FROM usuarios WHERE Login = ? && Senha = ?");
+            "SELECT * FROM usuarios WHERE Login = ? and Senha = ?");
         $stmt->bind_param("ss", $login, $senha);
         $stmt->execute();
 

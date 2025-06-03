@@ -1,5 +1,5 @@
 <?php
-class UsuarioRepository {
+class disciplinaRepository {
     private $conexao;
 
     public function __construct(mysqli $conexao)
@@ -9,9 +9,9 @@ class UsuarioRepository {
 
     public function buscarTodos() {
         $result = $this->conexao->query(
-            "SELECT * FROM disciplina");
+            "SELECT * FROM disciplinas");
 
-        $usuarios = [];
+        $disciplina = [];
         while ($row = $result->fetch_assoc()) {
             array_push($disciplina, $row);
         }
@@ -50,14 +50,14 @@ class UsuarioRepository {
     }
 
 
-    public function Inserir($login, $senha, $ativo)
+    public function Inserir($disciplina)
     {
-        echo $ativo;
+    
         
-        $sql = "INSERT INTO usuarios (LOGIN, SENHA, ATIVO) 
-                VALUES (?, ?, ?);";
+        $sql = "INSERT INTO disciplinas (disciplina) 
+                VALUES (?);";
                 $stmt = $this->conexao->prepare($sql);
-                $stmt->bind_param("ssi", $login,$senha,$ativo);
+                $stmt->bind_param("s", $disciplina);
                 $stmt->execute();
     }
 

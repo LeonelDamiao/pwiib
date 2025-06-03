@@ -14,7 +14,7 @@ $conexao->query($sql); $sql=
             NOME VARCHAR(100) NOT NULL
         );"
 ;$conexao->query($sql); $sql=
-        "CREATE TABLE DISCIPLINAS(
+        "CREATE TABLE DISCIPLINA(
             ID INT PRIMARY KEY AUTO_INCREMENT,
             DISCIPLINA VARCHAR(100)        
         );"
@@ -24,7 +24,7 @@ $conexao->query($sql); $sql=
             PERGUNTA TEXT NOT NULL,
             ID_DISCIPLINA INT,
             CONSTRAINT FK_DISCIPLINA FOREIGN KEY (ID_DISCIPLINA) 
-                REFERENCES DISCIPLINAS(ID)
+                REFERENCES DISCIPLINA(ID)
         );"
 ;$conexao->query($sql); $sql=
         "CREATE TABLE ALTERNATIVAS(
