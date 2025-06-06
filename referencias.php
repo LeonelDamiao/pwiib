@@ -1,12 +1,10 @@
-<?php 
-
-    include "cabecalho.php"; 
+include "cabecalho.php"; 
     include "conexao.php";
-    require_once 'disciplinaRepository.php';
+    require_once 'referenciasRepository.php';
 
-    //Crio um objeto do tipo disciplinaRepository chamado repo
+    //Crio um objeto do tipo referenciasRepository chamado repo
     //E recebe a conexão como parametro
-    $repo = new disciplinaRepository($conexao);
+    $repo = new referenciasRepository($conexao);
 
     if( isset($_GET['busca']) && !empty($_GET['busca']) )
     {
@@ -14,9 +12,9 @@
     }
     else
     {
-        //Chamei o metodo BuscarTodos para puxar 
-        // todos disciplinas do banco de dados
-        $disciplina = $repo->buscarTodos();
+        //Chamei o metodo BuscarTodas para puxar 
+        // todas referencias do banco de dados
+        $referencias = $repo->buscarTodos();
     }
     
 
@@ -26,13 +24,13 @@
         <br />
         <div class="card">
             <div class="card-header">
-                <b>Lista de disciplina</b>
+                <b>Lista de referencias</b>
             </div>
             <div class="card-body">
-             <form action="disciplina.php" method="get">
+             <form action="referencias.php" method="get">
                 <div class="row">
                         <div class="col-4">
-                            <a href="nova_disciplina.php" class="btn btn-success">
+                            <a href="nova_referencias.php" class="btn btn-success">
                             Novo disciplina
                             </a>
                         </div>
@@ -59,18 +57,18 @@
                     </thead>
                     <tbody>
                         <?php
-                            //foreach serve para ler todas as disciplinas
+                            //foreach serve para ler todas as REFERENCIAS
                             // vindos do banco em formato de array chave valor
-                            foreach ($disciplina as $user) {
+                            foreach ($referencias as $user) {
                                 echo "<tr>
                                         <td>".$user['ID']."</td>
-                                        <td>".$user['DISCIPLINA']."</td>
+                                        <td>".$user['REFERENCIAS']."</td>
                                       
                                         <td>
                                             <a class='btn btn-danger'
-                                                 href='excluir_disciplina.php?id=".$user['ID']."'>Excluir</a>
+                                                 href='excluir_referencias.php?id=".$user['ID']."'>Excluir</a>
                                             <a class='btn btn-warning'
-                                                 href='editar_disciplina.php?id=".$user['ID']."'>Editar</a>
+                                                 href='editar_referencias.php?id=".$user['ID']."'>Editar</a>
                                         </td> 
                                       </tr>";
                             }

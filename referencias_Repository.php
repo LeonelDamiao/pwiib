@@ -1,5 +1,5 @@
 <?php
-class disciplinaRepository {
+class referenciasRepository {
     private $conexao;
 
     public function __construct(mysqli $conexao)
@@ -9,29 +9,29 @@ class disciplinaRepository {
 
     public function buscarTodos() {
         $result = $this->conexao->query(
-            "SELECT * FROM disciplina");
+            "SELECT * FROM referencias");
 
         $disciplina = [];
         while ($row = $result->fetch_assoc()) {
-            array_push($disciplina, $row);
+            array_push($referencias, $row);
         }
-        return $disciplina;
+        return $referencias;
     }
 
     public function Pesquisar($busca)
     {
-        $sql = "SELECT * FROM disciplina WHERE LOGIN like '%$busca%' ";
+        $sql = "SELECT * FROM referencias WHERE LOGIN like '%$busca%' ";
         $resultado = $this->conexao->query($sql);
         $disciplina = [];
         while ($row = $resultado->fetch_assoc()) {
-            array_push($disciplina, $row);
+            array_push($referencias, $row);
         }
-        return $disciplina;
+        return $referencias;
     }
    
     public function buscarPorId($id) {
         $stmt = $this->conexao->prepare(
-            "SELECT * FROM disciplina WHERE id = ?");
+            "SELECT * FROM referencias WHERE id = ?");
         $stmt->bind_param("i", $id);
         $stmt->execute();
 
@@ -41,7 +41,7 @@ class disciplinaRepository {
 
     public function verificarLogin($login, $senha) {
         $stmt = $this->conexao->prepare(
-            "SELECT * FROM disciplina WHERE Login = ? && Senha = ?");
+            "SELECT * FROM referencias WHERE Login = ? && Senha = ?");
         $stmt->bind_param("ss", $login, $senha);
         $stmt->execute();
 
@@ -50,14 +50,14 @@ class disciplinaRepository {
     }
 
 
-    public function Inserir($disciplina)
+    public function Inserir($referencias)
     {
     
         
-        $sql = "INSERT INTO disciplinas (disciplina) 
+        $sql = "INSERT INTO referencias (referencias) 
                 VALUES (?);";
                 $stmt = $this->conexao->prepare($sql);
-                $stmt->bind_param("s", $disciplina);
+                $stmt->bind_param("s", $referencias);
                 $stmt->execute();
     }
 
@@ -71,9 +71,9 @@ class disciplinaRepository {
 
 
 
-    public function excluirdisciplina($id)
+    public function excluirreferencias($id)
     {
-        $sql = "DELETE FROM disciplina where id = ?";
+        $sql = "DELETE FROM referencias where id = ?";
         $preparar = $this->conexao->prepare($sql);
         $preparar->bind_param("i",$id);
         $preparar->execute();
