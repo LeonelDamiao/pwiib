@@ -1,6 +1,6 @@
 <?php 
 include "conexao.php";
-require_once "referenciasRepository.php";
+require_once "referencias_Repository.php";
 include "cabecalho.php";
 if(isset($_GET['id']) && !empty($_GET['id']) )
 {
@@ -27,31 +27,14 @@ else
                             readonly 
                              />
                     <br />
-                    <label>Login</label>
+                    <label>NOME</label>
                     <input type="text"
-                            value="<?php echo $referencias['LOGIN'] ?>"
+                            value="<?php echo $referencias['NOME'] ?>"
                             class="form-control"
-                            name="LOGIN"
+                            name="NOME"
                              />
                     <br />
-                    <label>Ativo</label>
-                    <select name="ATIVO" class='form-control'>
-                        <?php 
-                            if($referencias["ATIVO"])
-                            {
-                                ?>
-                                    <option value="1" selected >Ativado</option>
-                                    <option value="0">Desativado</option>
-                                <?php
-                            }else{
-                                ?>
-                                    <option value="1">Ativado</option>
-                                    <option value="0" selected>Desativado</option>
-                                <?php
-                            }
-                        ?>
-                    </select>
-                    <br />
+                    
                     <button class="btn btn-primary" type="submit">
                             Salvar referencia
                     </button>

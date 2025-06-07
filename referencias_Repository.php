@@ -11,7 +11,7 @@ class referenciasRepository {
         $result = $this->conexao->query(
             "SELECT * FROM referencias");
 
-        $disciplina = [];
+        $referencias = [];
         while ($row = $result->fetch_assoc()) {
             array_push($referencias, $row);
         }
@@ -50,22 +50,20 @@ class referenciasRepository {
     }
 
 
-    public function Inserir($referencias)
-    {
-    
-        
-        $sql = "INSERT INTO referencias (referencias) 
+    public function Inserir($referencia)
+    {    
+        $sql = "INSERT INTO referencias (nome) 
                 VALUES (?);";
                 $stmt = $this->conexao->prepare($sql);
-                $stmt->bind_param("s", $referencias);
+                $stmt->bind_param("s", $referencia);
                 $stmt->execute();
     }
 
-    public function Editar($login, $id, $ativo)
+    public function Editar($nome, $id)
     {
-        $sql = "UPDATE usuarios set LOGIN = ?, ATIVO = ? where ID = ?";
+        $sql = "UPDATE referencias set NOME = ? where ID = ?";
                 $stmt = $this->conexao->prepare($sql);
-                $stmt->bind_param("sii", $login,$ativo,$id);
+                $stmt->bind_param("si", $nome,$id);
                 $stmt->execute();
     }
 

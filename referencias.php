@@ -1,6 +1,8 @@
+<?php 
+
 include "cabecalho.php"; 
     include "conexao.php";
-    require_once 'referenciasRepository.php';
+    require_once 'referencias_Repository.php';
 
     //Crio um objeto do tipo referenciasRepository chamado repo
     //E recebe a conexão como parametro
@@ -12,9 +14,9 @@ include "cabecalho.php";
     }
     else
     {
-        //Chamei o metodo BuscarTodas para puxar 
+        //Chamei o metodo BuscarTodos para puxar 
         // todas referencias do banco de dados
-        $referencias = $repo->buscarTodos();
+        $referencias= $repo->buscarTodos();
     }
     
 
@@ -31,7 +33,7 @@ include "cabecalho.php";
                 <div class="row">
                         <div class="col-4">
                             <a href="nova_referencias.php" class="btn btn-success">
-                            Novo disciplina
+                            Novo referencias
                             </a>
                         </div>
                         <div class="col-4">
@@ -50,19 +52,18 @@ include "cabecalho.php";
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Login</th>
-                            <th>Ativo</th>
+                            <th>Nome</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                            //foreach serve para ler todas as REFERENCIAS
+                            //foreach serve para ler todas as disciplinas
                             // vindos do banco em formato de array chave valor
                             foreach ($referencias as $user) {
                                 echo "<tr>
                                         <td>".$user['ID']."</td>
-                                        <td>".$user['REFERENCIAS']."</td>
+                                        <td>".$user['NOME']."</td>
                                       
                                         <td>
                                             <a class='btn btn-danger'

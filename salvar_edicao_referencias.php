@@ -1,12 +1,12 @@
 <?php
 
 include "conexao.php";
-require_once "referenciasRepository.php";
+require_once "referencias_Repository.php";
 $repo = new referenciasRepository($conexao);
 
-if( isset($_POST["ID"]) && isset($_POST['LOGIN']) )
+if( isset($_POST["ID"]) && isset($_POST['NOME']) )
 {
-    $repo->Editar($_POST['LOGIN'],$_POST['ID'],$_POST['ATIVO']);
+    $repo->Editar($_POST['NOME'],$_POST['ID']);
     header('location: referencias.php');
 }
 else
