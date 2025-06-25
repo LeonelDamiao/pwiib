@@ -17,11 +17,11 @@
             <label>Disciplina</label>
             <select name="id_disciplina" class="form-control" >
                 <?php
-                    require_once 'repository/DisciplinaRepository.php';
-                    $repo = new DisciplinaRepository($conexao);
+                    require_once 'repository/perguntaRepository.php';
+                    $repo = new perguntaRepository($conexao);
 
                     foreach ($repo->buscarTodos() as $item  ) {
-                        echo "<option value='$item[ID]'> $item[DISCIPLINA] </option>";
+                        echo "<option value='$item[ID]'> $item[PERGUNTA] </option>";
                     }
                 ?>
             </select>

@@ -1,4 +1,4 @@
-include "conexao.php";
+<?include "conexao.php";
 require_once "repository/PerguntaRepository.php";
 $repo = new PerguntaRepository($conexao);
 
@@ -6,11 +6,11 @@ $repo = new PerguntaRepository($conexao);
 if( isset($_POST["salvar_pergunta"]) )
 {
     $repo->Inserir($_POST['PERGUNTA'], $_POST['id_disciplina']);
-    header('location: perguntas.php?sucesso=cadastrado com sucesso');
+    header('location: pergunta.php?sucesso=cadastrado com sucesso');
 }
 else
 {
-    header('location: perguntas.php?erro=formulario inválido');
+    header('location: pergunta.php?erro=formulario inválido');
 }
 
 ?>
