@@ -88,6 +88,18 @@
             </a>
         </li>
 
+        <li class="nav-item">
+            <a class="nav-link" href="pergunta.php" > 
+              pergunta
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="alternativa.php" > 
+              alternativa
+            </a>
+        </li>
+
 
 
       </ul><!--Fim do menu  -->
